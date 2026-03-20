@@ -1,4 +1,4 @@
-module github.com/souravsspace/unsent-go
+module github.com/unsent-dev/unsent-go
 
 go 1.25.5
 

@@ -11,7 +11,7 @@ Official Go SDK for the [Unsent API](https://unsent.dev) - Send transactional em
 ## Installation
 
 ```bash
-go get github.com/souravsspace/unsent-go/pkg/unsent
+go get github.com/unsent-dev/unsent-go/pkg/unsent
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ import (
     "log"
     "encoding/json"
     
-    "github.com/souravsspace/unsent-go/pkg/unsent"
+    "github.com/unsent-dev/unsent-go/pkg/unsent"
 )
 
 func main() {
