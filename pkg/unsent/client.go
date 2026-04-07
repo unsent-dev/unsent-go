@@ -39,6 +39,7 @@ type Client struct {
 	Stats        *StatsClient
 	Activity     *ActivityClient
 	Teams        *TeamsClient
+	ProviderConnections     *ProviderConnectionsClient
 }
 
 // NewClient creates a new Unsent API client
@@ -85,6 +86,7 @@ func NewClient(key string, options ...ClientOption) (*Client, error) {
 	client.Stats = &StatsClient{client: client}
 	client.Activity = &ActivityClient{client: client}
 	client.Teams = &TeamsClient{client: client}
+	client.ProviderConnections = &ProviderConnectionsClient{client: client}
 
 	return client, nil
 }
