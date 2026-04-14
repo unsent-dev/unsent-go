@@ -256,6 +256,10 @@ type Template struct {
 	UpdatedAt time.Time `json:"updatedAt"`
 }
 
+type TemplateListResponse struct {
+	Data []Template `json:"data"`
+}
+
 type TemplateCreateResponse struct {
 	ID        string    `json:"id"`
 	Name      string    `json:"name"`
@@ -424,6 +428,45 @@ type HealthResponse struct {
 type VersionResponse struct {
 	Version  string `json:"version"`
 	Platform string `json:"platform"`
+}
+
+// DomainRoute represents a domain route
+type DomainRoute struct {
+	ID                   string `json:"id"`
+	DomainID             string `json:"domainId"`
+	ProviderConnectionID string `json:"providerConnectionId"`
+	Weight               int    `json:"weight"`
+	IsActive             bool   `json:"isActive"`
+	Status               string `json:"status"`
+	Provider             string `json:"provider"`
+	Region               string `json:"region,omitempty"`
+	ClickTracking        *bool  `json:"clickTracking,omitempty"`
+	OpenTracking         *bool  `json:"openTracking,omitempty"`
+	CreatedAt            string `json:"createdAt"`
+	UpdatedAt            string `json:"updatedAt"`
+}
+
+// AddDomainRouteRequest represents the request body for adding a domain route
+type AddDomainRouteRequest struct {
+	ProviderConnectionID string `json:"providerConnectionId"`
+	Weight               *int   `json:"weight,omitempty"`
+}
+
+// UpdateDomainRouteRequest represents the request body for updating a domain route
+type UpdateDomainRouteRequest struct {
+	Weight        *int  `json:"weight,omitempty"`
+	ClickTracking *bool `json:"clickTracking,omitempty"`
+	OpenTracking  *bool `json:"openTracking,omitempty"`
+}
+
+// DomainRouteDeleteResponse represents the response from deleting a domain route
+type DomainRouteDeleteResponse struct {
+	Success bool `json:"success"`
+}
+
+// DomainRouteUpdateResponse represents the response from updating a domain route
+type DomainRouteUpdateResponse struct {
+	Success bool `json:"success"`
 }
 
 // Teams types

@@ -1,3 +1,4 @@
+// @manual
 package unsent
 
 type SettingsClient struct {

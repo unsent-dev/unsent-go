@@ -1,3 +1,4 @@
+// @manual
 package unsent
 
 import "fmt"
@@ -35,4 +36,9 @@ func (c *CampaignsClient) Pause(campaignID string) (*CampaignActionResponse, *AP
 // Resume resumes a campaign
 func (c *CampaignsClient) Resume(campaignID string) (*CampaignActionResponse, *APIError) {
 	return Post[CampaignActionResponse](c.client, fmt.Sprintf("/campaigns/%s/resume", campaignID), map[string]interface{}{})
+}
+
+// Delete deletes a campaign
+func (c *CampaignsClient) Delete(campaignID string) (*SuccessResponse, *APIError) {
+	return Delete[SuccessResponse](c.client, fmt.Sprintf("/campaigns/%s", campaignID), nil)
 }

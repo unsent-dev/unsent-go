@@ -388,6 +388,11 @@ func (e UpdateWebhookJSONBodyEventTypes) Valid() bool {
 	}
 }
 
+// SuccessResponse defines model for SuccessResponse.
+type SuccessResponse struct {
+	Success bool `json:"success"`
+}
+
 // GetActivityParams defines parameters for GetActivity.
 type GetActivityParams struct {
 	Page  *int `form:"page,omitempty" json:"page,omitempty"`

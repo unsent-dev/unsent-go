@@ -1,3 +1,4 @@
+// @manual
 package unsent
 
 // TeamsClient handles team API endpoints

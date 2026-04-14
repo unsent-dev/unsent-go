@@ -1,3 +1,4 @@
+// @manual
 package unsent
 
 // SystemClient handles system-level API endpoints

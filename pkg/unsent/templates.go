@@ -1,3 +1,4 @@
+// @manual
 package unsent
 
 import "fmt"
@@ -7,8 +8,8 @@ type TemplatesClient struct {
 }
 
 // List retrieves all templates
-func (c *TemplatesClient) List() (*[]Template, *APIError) {
-	return Get[[]Template](c.client, "/templates")
+func (c *TemplatesClient) List() (*TemplateListResponse, *APIError) {
+	return Get[TemplateListResponse](c.client, "/templates")
 }
 
 // Get retrieves a template by ID
